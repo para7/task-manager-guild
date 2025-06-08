@@ -1,0 +1,11 @@
+{
+	"scripts": {
+		"front": "pnpm -F 'frontend'",
+		"back": "pnpm -F 'backend'",
+		"dev:all": "pnpm -F 'frontend' dev:all"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@cloudflare/workers-types": "^4.20250607.0"
+	}
+}

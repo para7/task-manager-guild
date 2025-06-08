@@ -1,12 +1,22 @@
-import { Hono } from 'hono'
-import { renderer } from './renderer'
+import { type Context, Hono } from "hono";
 
-const app = new Hono()
+type HonoContextVars = {
+	Bindings: {
+		MY_VAR: string;
+		DB: D1Database;
+	};
+	Variables: {
+		MY_VAR_IN_VARIABLES: string;
+	};
+};
 
-app.use(renderer)
+const app = new Hono<HonoContextVars>();
+export type HonoContext = Context<HonoContextVars, "*">;
 
-app.get('/', (c) => {
-  return c.render(<h1>Hello!</h1>)
-})
+app.use("/", async (c) => {
+	return c.json({
+		message: "Hello, world!",
+	});
+});
 
-export default app
+export default app;

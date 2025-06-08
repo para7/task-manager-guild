@@ -1,6 +1,13 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "backend",
+  "name": "task-manager-build-backend",
   "compatibility_date": "2024-04-01",
-  "main": "./src/index.tsx"
+  "main": "./src/index.tsx",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "task-manager-guild",
+      "database_id": "e7bde054-d1c8-498c-9e43-14430de50b52"
+    }
+  ]
 }
