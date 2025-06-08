@@ -7,7 +7,8 @@
     "start": "vite --port 3000",
     "build": "vite build && tsc",
     "serve": "vite preview",
-    "test": "vitest run"
+    "test": "vitest run",
+    "css": "tcm -o __typed_css_modules__ src --watch"
   },
   "dependencies": {
     "@tanstack/react-router": "^1.114.3",
@@ -23,6 +24,7 @@
     "@types/react-dom": "^19.0.3",
     "@vitejs/plugin-react": "^4.3.4",
     "jsdom": "^26.0.0",
+    "typed-css-modules": "^0.9.1",
     "typescript": "^5.7.2",
     "vite": "^6.1.0",
     "vitest": "^3.0.5",
