@@ -6,7 +6,11 @@
     "build": "vite build",
     "preview": "$npm_execpath run build && vite preview",
     "deploy": "$npm_execpath run build && wrangler deploy",
-    "cf-typegen": "wrangler types --env-interface CloudflareBindings"
+    "cf-typegen": "wrangler types --env-interface CloudflareBindings",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "wrangler d1 migrations apply task-manager-guild --local",
+    "db:migrate:prod": "wrangler d1 migrations apply task-manager-guild --remote",
+    "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
     "drizzle-orm": "^0.44.2",
@@ -15,6 +19,7 @@
   "devDependencies": {
     "@cloudflare/vite-plugin": "^1.2.3",
     "@cloudflare/workers-types": "^4.20250607.0",
+    "@types/node": "^22.15.30",
     "drizzle-kit": "^0.31.1",
     "vite": "^6.3.5",
     "wrangler": "^4.19.1"
